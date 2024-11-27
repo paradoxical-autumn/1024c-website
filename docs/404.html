@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<head>
+    <title>1024cats.social - 404</title>
+    <link rel="stylesheet" href="/styles/404.css">
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf8">
+
+    <script src="/scripts/index.js" type="module"></script>
+    <script src="/scripts/random-txt.js"></script>
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <main>
+        <div class="titlebar pa-acc-red" aria-hidden="true">
+            error
+        </div>
+        <center><h1>404</h1></center>
+        <p>yeowch. i cant find the document you requested sorry ;-;</p>
+        <p>check your search query or head back to the <a href="/">home page</a>. alternatively, feel free to just chill here i guess. <i>now, i need to work out what to write about...</i></p>
+        <p>if none of those are your fancy, ill give you some random materials below!</p>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=Gf02GVdI7D0" target="_blank" ref="noreferrer noopener"><i>"rain"</i> by artifyber</a> - a chill lofi song i like.</li>
+            <li><a href="https://youtu.be/eLoVnZZWwEM" target="_blank" ref="noreferrer noopener"><i>"The Most ADVANCED VR Game in the WORLD!"</i></a> - a video mini-documentary on <i>Resonite</i> by The Virtual Reality Show</li>
+            <!-- <li><a href="/blogs/underline_tag.html"><i>"please stop using underlines for emphasis"</i> - a blog by paradox</a></li> -->
+            <li><a href="https://theuselessweb.com/" target="_blank" ref="noreferrer noopener">the useless web</a> - a place which links to random websites.</li>
+        </ul>
+    </main>
+
+    <footer>
+        <div w3-include-html="templates/footer.html"></div>
+        <p id="random-txt"></p>
+    </footer>
+
+    <script>
+        includeHTML();
+    </script>
+</body>

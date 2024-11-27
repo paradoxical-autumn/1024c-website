@@ -1,0 +1,34 @@
+:root {
+    --tb-height: 1.5em;
+}
+
+.titlebar {
+    font-family: "Tamzen16";
+    font-weight: bold;
+    position: relative;
+    border-bottom: 4px solid black;
+    text-align: center;
+    /* padding-left: var(--tb-height); */
+    height: var(--tb-height);
+    line-height: var(--tb-height);
+    margin: 0;
+    background-color: var(--pa-bg);
+    color: var(--pa-fg);
+
+    background-image: url("/img/tbs/left-side.png");
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-size: 1.25em;
+    image-rendering: pixelated;
+}
+
+.pa-black   {--pa-bg: #3f3f3f; --pa-fg: #fff; }
+.pa-grey    {--pa-bg: #808080; --pa-fg: #fff; }
+.pa-white   {--pa-bg: #c8c8c8; --pa-fg: #3f3f3f; }
+
+.pa-acc-orange  {--pa-bg: #ff903f; --pa-fg: #000; }
+.pa-acc-pink    {--pa-bg: #bf51fe; --pa-fg: #fff; }
+.pa-acc-blurple {--pa-bg: #807ffe; --pa-fg: #fff; }
+.pa-acc-green   {--pa-bg: #43b582; --pa-fg: #fff; }
+.pa-acc-red     {--pa-bg: #ec4245; --pa-fg: #fff; }
+.pa-acc-purple  {--pa-bg: #8143e6; --pa-fg: #fff; }

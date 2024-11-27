@@ -1,0 +1,232 @@
+@import "fonts.css";
+@import "titles.css";
+
+/* MAIN CONTENT */
+body {
+    padding-block: 2rem;
+    width: min(1152px, 90vw) !important;
+    margin-inline: auto;
+}
+
+/* child definitions */
+
+body > * {
+    font-family: "Tamzen16";
+    font-size: 1.25em;
+    background-color: #ffffff;
+    border: 4px solid;
+    /* border-radius: 8px; */
+}
+
+p {
+    padding: 0 0.5rem -1rem;
+}
+
+/* major titles use major fonts! */
+
+h1 {
+    font-family: "Tamzen16";
+    font-size: 3em;
+    font-weight: bold
+}
+
+h2 {
+    font-size: 2em;
+    font-family: "Tamzen12";
+    font-weight: bold
+}
+
+h3 {
+    font-family: "Tamzen12";
+}
+
+h4 {
+    font-family: "Tamzen9";
+}
+
+/* fix title padding */
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 0 0.5rem;
+}
+
+/* lightbox */
+
+.lightbox {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    margin: auto;
+    width: 90%;
+
+    padding: 1rem;
+}
+
+body > main {
+    grid-area: main;
+    height: min-content;
+    max-width: fit-content;
+    margin: auto;
+}
+
+body > main, body > div {
+    margin-bottom: 2em;
+}
+
+footer {
+    grid-area: footer;
+    text-align: center;
+}
+
+/* grid overrides */
+
+@media (min-width: 1152px) {
+    footer {
+        margin: auto;
+        max-width: fit-content;
+    }
+}
+
+/* ANIMATED SITE TITLE */
+
+@keyframes breathe {
+    from {
+        animation-timing-function: ease-out;
+    }
+    to {
+        transform: translateY(-15px);
+        text-shadow: 0 0 40px rgb(128, 128, 255);
+        animation-timing-function: ease-in-out;
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(-.3px, .3px)
+    }
+    12.5% {
+        transform: translate(-.10px, -.2px)
+    }
+    25% {
+        transform: translate(.9px, -.9px)
+    }
+    37.5% {
+        transform: translate(.1px, .6px)
+    }
+    50% {
+        transform: translate(-.5px, -.9px)
+    }
+    67.5% {
+        transform: translate(.7px, -.4px)
+    }
+    75% {
+        transform: translate(-.9px, -.10px)
+    }
+    87.5% {
+        transform: translate(-.6px, -.4px)
+    }
+    100% {
+        transform: translate(0, .3px);
+    }
+}
+
+/* more definitions */
+
+img { max-width: 100%; }
+main > img, main > p > img { display: block; margin: auto; }
+
+header {
+    grid-area: header;
+    text-align: center;
+
+    font-family: "X11Helvetica";
+    font-weight: bold;
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: 3em;
+    margin-bottom: 1em;
+}
+
+p {
+    margin: 1rem;
+    line-height: 1.2em;
+}
+
+a {
+    color: #375eda;
+}
+
+a:visited {
+    color: #375eda;
+}
+
+.displist {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.gridlist {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #808080;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+    width: 90%;
+}
+
+/* backgounds img */
+
+html {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cfilter%20id%3D%22noise%22%3E%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.875%22%20result%3D%22noise%22%20%2F%3E%20%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220.44140625%200%200%200%200%200%200.22265625%200%200%200%200%200%200.99609375%200%200%200%200%200%201%200%22%20%2F%3E%20%3C%2Ffilter%3E%20%3Crect%20filter%3D%22url%28%23noise%29%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22transparent%22%20opacity%3D%221%22%20%2F%3E%3C%2Fsvg%3E'), linear-gradient(68deg, #7139FF 0%, #D573EC 100%);
+    background-repeat: repeat, repeat;
+    background-attachment: fixed, fixed;
+    background-size: auto, auto;
+    background-position: center, center;
+    scroll-behavior: smooth;
+}
+
+/* dark theme overrides */
+@media (prefers-color-scheme: dark) {
+    html {
+        background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cfilter%20id%3D%22noise%22%3E%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.875%22%20result%3D%22noise%22%20%2F%3E%20%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220.44140625%200%200%200%200%200%200.22265625%200%200%200%200%200%200.99609375%200%200%200%200%200%201%200%22%20%2F%3E%20%3C%2Ffilter%3E%20%3Crect%20filter%3D%22url%28%23noise%29%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22transparent%22%20opacity%3D%221%22%20%2F%3E%3C%2Fsvg%3E'), linear-gradient(black 0%, #371D7F 100%);
+    }
+
+    body > * {
+        background-color: #11151d;
+        color: #fff;
+        border-color: black;
+    }
+
+    header {
+        color: #fff;
+        background: none;
+    }
+
+    code {
+        background-color: black;
+    }
+
+    pre {
+        background-color: black;
+    }
+
+    hr {
+        border-top-color: #808080;
+    }
+
+    a {
+        color: #86b8ff;
+    }
+    
+    a:visited {
+        color: #86b8ff
+    }
+}
