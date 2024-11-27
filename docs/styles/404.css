@@ -182,6 +182,14 @@ hr {
     width: 90%;
 }
 
+/* code! */
+code {
+    background-color: #3f3f3f;
+    color: #fff;
+    padding: .25em;
+    font-family: "Tamzen12", monospace;
+}
+
 /* backgounds img */
 
 html {

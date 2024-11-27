@@ -1,4 +1,4 @@
-var random_text_array = ["yawn", "hey how u doin'?", "badger badger badger badger", "erm... what der flip?", "sample text!", "autumn was here."]
+var random_text_array = ["<i>yawn</i>", "hey how u doin'?", "badger badger badger badger", "erm... what der flip?", "sample text!", "autumn was here.", "<code>ParadoxicalError: Task failed successfully!</code>"]
 
 window.addEventListener('load', getRandomTxt)
 
@@ -7,5 +7,5 @@ function getRandomTxt() {
     
     const randint = Math.floor(Math.random() * random_text_array.length);
 
-    obj.innerText = random_text_array[randint];
+    obj.innerHTML = random_text_array[randint];
 }
