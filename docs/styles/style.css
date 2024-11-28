@@ -158,6 +158,18 @@ footer {
     }
 }
 
+@media (max-aspect-ratio: 4/3) {
+    .displist > * img {
+        min-height: 150%;
+        min-width: auto;
+    }
+
+    .displist > * {
+        padding-bottom: 2.5cqmax;
+        padding-top: 2.5cqmax;
+    }
+}
+
 /* jumble up the UI & animation weirdness */
 
 @media not (prefers-reduced-motion) {
