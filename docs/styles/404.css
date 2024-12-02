@@ -238,3 +238,22 @@ html {
         color: #86b8ff
     }
 }
+
+/* anims */
+@media not (prefers-reduced-motion) {
+    span[letter-animation="breathe"] > * {
+        white-space: break-spaces;
+        display: inline-block;
+        animation: breathe 1200ms ease calc(var(--index) * 100 * 1ms) infinite alternate;
+    }
+
+    span[letter-animation="shake"] > * {
+        white-space: break-spaces;
+        display: inline-block;
+        animation: shake 300ms linear calc(var(--index) * 100 * 1ms) infinite alternate;
+    }
+
+    .shakey {
+        animation: shake 300ms linear infinite alternate;
+    }
+}
