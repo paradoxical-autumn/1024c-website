@@ -1,8 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /403.html
-Disallow: /404.html
-Disallow: /500.html
+Disallow: /errors/
 Disallow: /prdx_404.html
 Disallow: /fonts/
 Disallow: /img/
