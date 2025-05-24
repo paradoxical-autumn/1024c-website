@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en-gb">
+
+<head>
+    <title>1024cats.social - attribution</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/styles/style.css">
+
+    <meta http-equiv="content-type" content="text/html">
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=1000">
+
+    <meta property="og:title" content="1024cats.social - Attribution" />
+    <meta property="og:url" content="https://1024cats.social" />
+    <meta property="og:site_name" content="1024cats.social" />
+    <meta property="og:description" content="All the cool stuff that makes 1024c work!" />
+    <meta property="og:image" content="https://1024cats.social/meta/og_img.avif" />
+
+    <script src="/scripts/index.js" type="module"></script>
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div w3-include-html="/templates/navi.html" class="lbartop"></div>
+    <div w3-include-html="/templates/misc.html" class="lbarbot"></div>
+
+    <main>
+        <div class="titlebar pa-acc-purple" aria-hidden="true">
+            attribution
+        </div>
+        <h1>files</h1>
+        <p>If I'm trying to use a service which has a stupidly small file size limit (most notably, Discord), I might
+            instead choose to hotlink the file onto this website so people can view it without me having to buy a
+            premium subscription to whatever website I'm using.</p>
+        <p>No one else can upload files to this directory, only me. Don't ask for me to host your media for you. I'm not
+            going to. Sorry if that seems mean, its just this server doesn't have much storage and I'd much rather have
+            it so I can choose when media expires.</p>
+        <p>Of course, if you're using the 1024cats matrix server, this rule doesn't apply. Your media there will be
+            hosted automatically on this instance but will expire after 30 days. <span
+                style="font-weight: bold; background-color: #ec4245; color: white;">Hotlinking files hosted there isn't
+                allowed either.</span> Of course, I can't enforce that so I can only politely request you don't do it.
+        </p>
+        <h3>Anubis</h3>
+        <p>Files hosted here are not protected by Anubis. Anything uploaded to this tree can <i>and will</i>, be used by
+            those <s>*****</s> "chooms"<sup><a href="#cyberpunk">[1]</a></sup> over at AI companies to train their
+            models. I could write a blog about this tbh.</p>
+        <p style="padding-left: 1rem; font-style: italic;">"20XX-XX: Dear AI companies, please [****] off."</p>
+        <p style="font-style: italic;">If I actually do write that blog, I'll hyperlink to it lol.</p>
+        <p>Anyway, there ya go. My custom file storage. Yippee.</p>
+
+        <h2>footnotes</h2>
+        <p id="cyberpunk">[1] cyberpunk 2077 has ruined my vocabulary, sorry.</p>
+    </main>
+
+    <footer>
+        <div w3-include-html="/templates/footer.html"></div>
+    </footer>
+
+    <script>
+        includeHTML();
+    </script>
+</body>
+
+</html>
