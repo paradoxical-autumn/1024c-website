@@ -21,7 +21,7 @@ body {
 /* child definitions */
 
 body > * {
-    font-family: "Tamzen16";
+    font-family: "Tamzen16", monospace;
     font-size: 1.25em;
     background-color: #ffffff;
     border: 4px solid;
@@ -35,23 +35,23 @@ p {
 /* major titles use major fonts! */
 
 h1 {
-    font-family: "Tamzen16";
+    font-family: "Tamzen16", monospace;
     font-size: 3em;
     font-weight: bold
 }
 
 h2 {
     font-size: 2em;
-    font-family: "Tamzen12";
+    font-family: "Tamzen12", monospace;
     font-weight: bold
 }
 
 h3 {
-    font-family: "Tamzen12";
+    font-family: "Tamzen12", monospace;
 }
 
 h4 {
-    font-family: "Tamzen9";
+    font-family: "Tamzen9", monospace;
 }
 
 /* fix title padding */

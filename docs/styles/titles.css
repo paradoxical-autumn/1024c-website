@@ -3,7 +3,7 @@
 }
 
 .titlebar {
-    font-family: "Tamzen16";
+    font-family: "Tamzen16", monospace;
     font-weight: bold;
     position: relative;
     border-bottom: 4px solid black;
