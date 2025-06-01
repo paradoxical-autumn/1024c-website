@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /errors/
+Disallow: /prdx_404.html
+Disallow: /fonts/
+Disallow: /img/
+Disallow: /templates/

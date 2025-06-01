@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="en-gb">
+
+<head>
+    <title>1024cats.social - attribution</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/styles/style.css">
+
+    <meta http-equiv="content-type" content="text/html">
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=1000">
+
+    <meta property="og:title" content="1024cats.social - Attribution" />
+    <meta property="og:url" content="https://1024cats.social" />
+    <meta property="og:site_name" content="1024cats.social" />
+    <meta property="og:description" content="All the cool stuff that makes 1024c work!" />
+    <meta property="og:image" content="https://1024cats.social/meta/og_img.avif" />
+
+    <script src="/scripts/index.js" type="module"></script>
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div w3-include-html="/templates/navi.html" class="lbartop"></div>
+    <div w3-include-html="/templates/misc.html" class="lbarbot"></div>
+
+    <main>
+        <div class="titlebar pa-acc-green" aria-hidden="true">
+            attribution
+        </div>
+        <h1>
+            <span split-by="letter" letter-animation="breathe">attribution</span>
+        </h1>
+        <h2>the 1024c network</h2>
+        <p>the 1024cats network of websites is built off of multiple pieces of code, all run within docker containers!
+            here's a list of them:</p>
+        <ul>
+            <li>the <a href="https://matrix.org/" target="_blank" rel="noopener noreferrer">matrix protocol</a></li>
+            <li><a href="https://github.com/louislam/uptime-kuma" target="_blank"
+                    rel="noopener noreferrer">uptime-kuma</a></li>
+            <li><a href="https://nginx.org/en/" target="_blank" rel="noopener noreferrer">nginx</a></li>
+        </ul>
+        <h2>this website</h2>
+        <p>a lot of this website is sourced from different places, but the main place i sourced code from was <a
+                href="https://www.unix.dog/~yosh/" target="_blank" rel="noopener noreferrer">yosh's website</a> <a
+                href="https://git.unix.dog/yosh/website" target="_blank" rel="noopener noreferrer">(source code)</a>.
+        </p>
+        <p>as for other things i got code from:</p>
+        <ul>
+            <li><a href="https://splitting.js.org/" target="_blank" rel="noopener noreferrer">splitting.js</a> (how i do
+                my funky text animations)</li>
+            <li><a href="https://www.w3schools.com/howto/howto_html_include.asp" target="_blank"
+                    rel="noopener noreferrer">w3schools - how to html include</a></li>
+        </ul>
+        <p>also, the favicon is by one of my friends, gremlin, who drew it as a meme <em>ages ago</em>. so, thanks for
+            that, its now the icon i have for any project that doesnt have an icon.</p>
+        <h2>old software</h2>
+        <p>here's all the software that i used at some point, but stopped using for some reason.</p>
+        <ul>
+            <li>the <a href="https://hub.docker.com/_/httpd" target="_blank" rel="noopener noreferrer">apache HTTPD
+                    server software</a></li>
+            <li><a href="https://anubis.techaro.lol/" target="_blank" rel="noopener noreferrer">anubis</a></li>
+            <li><a href="https://github.com/ZoeyVid/NPMplus" target="_blank" rel="noopener noreferrer">NPMPlus</a></li>
+        </ul>
+    </main>
+
+    <footer>
+        <div w3-include-html="/templates/footer.html"></div>
+    </footer>
+
+    <script>
+        includeHTML();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en-gb">
+
+<head>
+    <title>1024cats.social - contact me</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/styles/style.css">
+
+    <meta http-equiv="content-type" content="text/html">
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=1000">
+
+    <meta property="og:title" content="1024cats.social - Contact" />
+    <meta property="og:url" content="https://1024cats.social" />
+    <meta property="og:site_name" content="1024cats.social" />
+    <meta property="og:description" content="A page to contact the owner of 1024cats.social" />
+    <meta property="og:image" content="https://1024cats.social/meta/og_img.avif"/>
+
+    <script src="/scripts/index.js" type="module"></script>
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div w3-include-html="/templates/navi.html" class="lbartop"></div>
+    <div w3-include-html="/templates/misc.html" class="lbarbot"></div>
+
+    <main>
+        <div class="titlebar pa-acc-orange" aria-hidden="true">
+            contact me
+        </div>
+        <h1>wanna talk to me?</h1>
+        <p>cool! well, here's a bunch of places you can find me:</p>
+        <ul>
+            <li><a href="https://resonite.com" target="_blank" ref="noreferrer">resonite</a> -- <code>paradox19</code>
+                -- my favourite place in cyberspace. you should check it out too</li>
+            <li><a href="https://matrix.to/#/@paradox:1024cats.social" target="_blank" ref="noreferrer">matrix</a> --
+                <code>paradox:1024cats.social</code> -- like discord but more secure. this is my preferred way of text
+                chat!</li>
+            <li>youtube</li>
+            <ul>
+                <li><a href="https://www.youtube.com/@justanotherparadox" target="_blank" ref="noreferrer">music
+                        channel</a> -- <code>@justanotherparadox</code> -- i make music. check it out if you want, or
+                    not, up to you.</li>
+                <li><a href="https://www.youtube.com/@paradoxical_autumn" target="_blank" ref="noreferrer">alternate
+                        channel</a> -- <code>@paradox19</code> -- this is my "lazy" channel where im SUPPOSED to upload
+                    random content, but have just ended up making resonite videos.</li>
+            </ul>
+            <li><a href="https://discord.com/users/730089700139991060" target="_blank" ref="noreferrer">discord</a> --
+                <code>bobool3ol</code> -- a much more mainstream text chat client. i'd prefer matrix but dm me
+                here if you also wanna talk. <i>dont ask about the username, it stems from an <a href="https://wiki.resonite.com/Type:Bobool3ol" target="_blank" ref="noreferrer">inside joke among the resonite community</a></i></li>
+            <li><a href="https://github.com/paradoxical-autumn/" target="_blank" ref="noreferrer">github</a> --
+                <code>paradoxical-autumn</code> -- i upload my code here sometimes.</li>
+        </ul>
+    </main>
+
+    <footer>
+        <div w3-include-html="/templates/footer.html"></div>
+    </footer>
+
+    <script>
+        includeHTML();
+    </script>
+</body>
+
+</html>

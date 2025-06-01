@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="en-gb">
+
+<head>
+    <title>1024cats.social - contact me</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/styles/style.css">
+
+    <meta http-equiv="content-type" content="text/html">
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=1000">
+
+    <meta property="og:title" content="1024cats.social - Contact" />
+    <meta property="og:url" content="https://1024cats.social" />
+    <meta property="og:site_name" content="1024cats.social" />
+    <meta property="og:description" content="A page to contact the owner of 1024cats.social" />
+    <meta property="og:image" content="https://1024cats.social/meta/og_img.avif" />
+
+    <script src="/scripts/index.js" type="module"></script>
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @media not (prefers-reduced-motion) {
+            span[letter-animation="breathe"]>* {
+                white-space: break-spaces;
+                display: inline-block;
+                animation: breathe 1200ms ease calc(var(--index) * 100 * 1ms) infinite alternate;
+            }
+
+            span[letter-animation="shake"]>* {
+                white-space: break-spaces;
+                display: inline-block;
+                animation: shake 300ms linear calc(var(--index) * 100 * 1ms) infinite alternate;
+            }
+
+            .shakey {
+                animation: shake 300ms linear infinite alternate;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div w3-include-html="/templates/navi.html" class="lbartop"></div>
+    <div w3-include-html="/templates/misc.html" class="lbarbot"></div>
+
+    <main>
+        <div class="titlebar pa-acc-red" aria-hidden="true">
+            error pages
+        </div>
+        <h1><span split-by="letter" letter-animation="shake">I LOVE ERROR PAGES!!</span></h1>
+        <p style="mask-image: linear-gradient(to bottom, black, transparent 85%);">i might just be super autistic about
+            these but i will always try and find error pages on websites to see how unique they are and what developers
+            have been cooking with them idk i just think theyre neat</p>
+        <p>sry i was rambling for a second lol</p>
+        <p><span span split-by="letter" letter-animation="breathe">haha.</span></p>
+        <h2>ANYWAY</h2>
+        <p>here's a list of mine so far!</p>
+        <ul>
+            <li><a href="/errors/401">401</a></li>
+            <li><a href="/errors/403">403</a></li>
+            <li><a href="/errors/404">404</a></li>
+            <li><a href="/errors/405">405</a> (for idiots who are tryna hack into my server.)</li>
+            <li><a href="/errors/500">500</a></li>
+        </ul>
+    </main>
+
+    <footer>
+        <div w3-include-html="/templates/footer.html"></div>
+    </footer>
+
+    <script>
+        includeHTML();
+    </script>
+</body>
+
+</html>

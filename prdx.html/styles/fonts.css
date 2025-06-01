@@ -1,0 +1,57 @@
+@font-face {
+    font-family: "Text Me One";
+    src: url(../fonts/TextMeOne-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../fonts/Poppins-Regular.ttf)
+}
+
+@font-face {
+    font-family: "Major Mono Display";
+    src: url(../fonts/MajorMonoDisplay-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Just Me Again Down Here";
+    src: url(../fonts/JustMeAgainDownHere-Regular.ttf);
+}
+
+@font-face {
+    font-family: "X11Helvetica";
+    src: url(../fonts/helvB12.ttf);
+}
+
+@font-face {
+    font-family: "Tamzen9";
+    src: url(../fonts/TamzenForPowerline5x9r.ttf);
+}
+
+@font-face {
+    font-family: "Tamzen9";
+    src: url(../fonts/TamzenForPowerline5x9b.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Tamzen12";
+    src: url(../fonts/TamzenForPowerline6x12r.ttf);
+}
+
+@font-face {
+    font-family: "Tamzen12";
+    src: url(../fonts/TamzenForPowerline6x12b.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Tamzen16";
+    src: url(../fonts/TamzenForPowerline8x16r.ttf);
+}
+
+@font-face {
+    font-family: "Tamzen16";
+    src: url(../fonts/TamzenForPowerline8x16b.ttf);
+    font-weight: bold;
+}

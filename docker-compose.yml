@@ -1,0 +1,22 @@
+services:
+  nginx:
+    image: nginx
+    ports:
+      - 80:80
+      - 443:443
+    
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d
+      - ./prdx.html:/usr/share/prdx/html
+      # - ./auth:/etc/prdx/auth
+      - ./include:/etc/prdx/include
+      - ./self-signed:/etc/prdx/self-signed
+      - /etc/letsencrypt/live:/etc/letsencrypt/live
+      - /etc/letsencrypt/archive:/etc/letsencrypt/archive
+      - ./certbot.html:/var/www/certbot # /.well-known/acme-challenge/
+
+networks:
+  proxy_default:
+    external: true
+
+# awa
