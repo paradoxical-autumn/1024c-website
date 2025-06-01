@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en-gb">
+
+<head>
+    <title>1024cats.social - Matrix Server</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/styles/style.css">
+
+    <meta http-equiv="content-type" content="text/html">
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=1000">
+
+    <meta property="og:title" content="1024cats.social - Matrix Server" />
+    <meta property="og:url" content="https://1024cats.social/matrix" />
+    <meta property="og:site_name" content="1024cats.social" />
+    <meta property="og:description"
+        content="1024cats.social provides a Matrix server for some people, you can read about it if you want." />
+
+    <script src="/scripts/index.js" type="module"></script>
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div w3-include-html="/templates/navi.html" class="lbartop"></div>
+    <div w3-include-html="/templates/misc.html" class="lbarbot"></div>
+
+    <main>
+        <div class="titlebar pa-acc-pink" aria-hidden="true">
+            matrix
+        </div>
+        <p>i provide a matrix instance on this server for friends. <b>it's invite only</b> as this server doesnt have
+            much storage ;-;</p>
+        <h2>what is the "matrix network"?</h2>
+        <p>im probably not the best person to ask, so <a href="https://matrix.org/" rel="noopener noreferrer">go check
+                out the official organisation behind the spec</a> buttttt</p>
+        <p>it's an open and decentralised protocol that allows for anyone to talk to anyone using whatever server they
+            choose! think email but for real time chatting. so, i could be <code>`@paradox:1024cats.social`</code>
+            (matrix uses colons instead of @s in the domain portion) and speak to <code>`@alice:matrix.org`</code>. our
+            accounts are stored on different servers but we can speak just fine!</p>
+        <p>since its not owned by one entity, theres not much of a chance for corporate greed (ew) to take hold, and even
+            if it does, you can always move to another server!</p>
+        <p>anyway</p>
+        <h2>whatever else you might want to know about this matrix server:</h2>
+        <ul>
+            <li>the <a href="/matrix/privacy">privacy policy</a> (for users)</li>
+            <li>the <a href="/matrix/tos">terms of service</a> (for users)</li>
+        </ul>
+        <p>both the privacy policy and ToS are more to protect myself than anything.</p>
+    </main>
+
+    <footer>
+        <div w3-include-html="/templates/footer.html"></div>
+    </footer>
+
+    <script>
+        includeHTML();
+    </script>
+</body>
+
+</html>
