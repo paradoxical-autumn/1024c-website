@@ -8,12 +8,14 @@ services:
     volumes:
       - ./conf.d:/etc/nginx/conf.d
       - ./prdx.html:/usr/share/prdx/html
-      # - ./auth:/etc/prdx/auth
+      - ./auth:/etc/prdx/auth
       - ./include:/etc/prdx/include
       - ./self-signed:/etc/prdx/self-signed
       - /etc/letsencrypt/live:/etc/letsencrypt/live
       - /etc/letsencrypt/archive:/etc/letsencrypt/archive
       - ./certbot.html:/var/www/certbot # /.well-known/acme-challenge/
+    
+    restart: unless-stopped
 
 networks:
   proxy_default:
